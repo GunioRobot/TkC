@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 
-## TkC v.0.0.6
+## TkC v.0.0.7
 
 ## AUTHOR: sugardrunk
 ## URL: http://sugardrunk.devio.us
@@ -18,8 +18,8 @@ class Browser1(Frame):
       Frame.__init__(self)
       self.pack(expand=YES, fill=BOTH)
       w, h = root.winfo_screenwidth(), root.winfo_screenheight()
-      self.master.geometry('%dx%d+0+0' % (w, h))
-      self.master.title('TkC v.0.0.6')
+      self.master.geometry('%dx%d' % (w, h))
+      self.master.title('TkC v.0.0.7')
                    
       self.address = Entry(self)
       self.address.pack(fill=X, padx=24, pady=12)
@@ -46,8 +46,9 @@ class Browser1(Frame):
          urllib1.close()
       except IOError:
          self.contents.settext('URL NOT FOUND!')
-      self.contents.text_state=DISABLED      
-
+      self.contents.text_state=DISABLED
+   
+   # define button command
    def asksaveasfilename(self):
       filename = tkFileDialog.asksaveasfilename()
       if filename:
