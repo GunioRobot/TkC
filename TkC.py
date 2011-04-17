@@ -1,10 +1,11 @@
 # -*- coding: utf-8 -*-
 
 
-## TkC v.0.0.8
+## TkC v.0.0.9
 
-## AUTHOR: sugardrunk
-## URL: http://sugardrunk.devio.us
+##  Fetch code from any url and save it to file
+##  Copyright (C) 2011 sugardrunk <http://sugardrunk.devio.us>
+
 
 from Tkinter import *
 import Pmw, urllib, urlparse
@@ -19,7 +20,7 @@ class Browser1(Frame):
 
       w, h = root.winfo_screenwidth(), root.winfo_screenheight()
       main.master.geometry('%dx%d' % (w, h))
-      main.master.title('TkC v.0.0.8')
+      main.master.title('TkC v.0.0.9')
                          
       main.entryBar = Entry(main, fg='#333')
       main.entryBar.pack(fill=X, padx=24, pady=12)
@@ -38,7 +39,7 @@ class Browser1(Frame):
       url1 = event.widget.get()
       parseEntry = urlparse.urlparse(url1)
       main.contents.text_state=NORMAL
-      if parseEntry[0] == "":
+      if parseEntry[0] == '':
         url1 = 'http://' + url1
       try:
          urllib1 = urllib.urlopen(url1)
@@ -51,7 +52,7 @@ class Browser1(Frame):
    # define button command
    def savefile(main):
       reload(sys)
-      sys.setdefaultencoding("utf-8")
+      sys.setdefaultencoding('utf-8')
       main.contents.exportfile('output.html')                    
 
 Browser1().mainloop()
