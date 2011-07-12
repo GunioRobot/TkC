@@ -4,13 +4,12 @@
 
 ## TkC v.0.1.0
 
-##  Fetch code from any url and save it to file.
+##  Fetch code from any url and save it to file
 ##  Copyright (C) 2011 sugardrunk <http://sugardrunk.devio.us>
 
 
 from Tkinter import *
-import tkMessageBox
-import Pmw, urllib, urlparse
+import Pmw, tkMessageBox, urllib, urlparse
 
 root = Tk()
 root.option_add('*font', 'sans -11')
